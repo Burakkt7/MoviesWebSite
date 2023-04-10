@@ -1,0 +1,71 @@
+﻿
+@model IEnumerable<MoviesWebSite.Models.Favorite>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserFavorites</title>
+</head>
+<body>
+    <div>
+        <partial name="~/Views/Partials/_UserFavoritePartial.cshtml" />
+    </div>
+    <table class="table" style="left:10%; right:10%; top:40px; ">
+        <thead>
+            <tr>
+                <th>
+                    Adı
+                </th>
+                <th>
+                    Film Katagorisi
+                </th>
+                <th>
+                    Yazar
+                </th>
+                <th>
+                    IMDB
+                </th>
+                <th>
+                    Kısa Bilgilendirme
+                </th>
+                
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieCatagories)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieYazar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieIMDB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hakkında)
+                    </td>
+                   
+                    <td>
+                        <a asp-action="Detaylar" asp-controller="Movies" asp-route-id="@item.Id">Detaylar</a> |
+
+                        <a asp-action="Delete" asp-controller="Favorite" asp-route-id="@item.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

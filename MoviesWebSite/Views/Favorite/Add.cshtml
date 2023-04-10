@@ -1,0 +1,63 @@
+﻿@model MoviesWebSite.Models.Favorite
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+
+    <div>
+        <h4>Favorite</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MovieCatagories)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MovieCatagories)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MovieYazar)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MovieYazar)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MovieIMDB)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MovieIMDB)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Hakkında)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Hakkında)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GenelDetay)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GenelDetay)
+            </dd>
+
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    </div>
+</body>
+</html>

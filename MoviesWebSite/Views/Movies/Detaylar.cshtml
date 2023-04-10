@@ -1,0 +1,65 @@
+﻿@model MoviesWebSite.Models.Movie
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detaylar</title>
+</head>
+<body>
+    <div>
+        <partial name="~/Views/Partials/_UserFavoritePartial.cshtml" />
+    </div>
+    <div style=" margin-left:200px;">
+        <h4>Film</h4>
+        <br />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Adı
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                Film Katagorisi
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MovieCatagories)
+            </dd>
+            <dt class="col-sm-2">
+                Yazar
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MovieYazar)
+            </dd>
+            <dt class="col-sm-2">
+                IMDB
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MovieIMDB)
+            </dd>
+            <dt class="col-sm-2">
+                Kısa Bilgilendirme
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Hakkında)
+            </dd>
+            <dt class="col-sm-2">
+                Konusu
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GenelDetay)
+            </dd>
+
+        </dl>
+    </div>
+    <div style=" margin-left:200px;">
+        <a asp-action="Add" asp-controller="Favorite" asp-route-id="@Model?.Id">Favorilere Ekle</a>  <br />
+        <a asp-action="UserFavorites" asp-controller="Favorite">Favoriler Listesi</a>
+    </div>
+</body>
+</html>
+
